@@ -1,0 +1,67 @@
+.contact-us {
+  max-width: 1440px;
+  margin: 158px  auto 0 auto;
+  background: url("../images/footer.png") 0 bottom no-repeat;
+  background-size: 100%;
+  min-height: 300px;
+}
+
+.contact-info {
+  @include wrapper;
+  display: flex;
+  padding-bottom: 20%;
+
+  > div {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  .contact-content {
+    padding-right: 60px;
+  }
+
+  .contact-form {
+    padding-left: 60px;
+  }
+
+  p {
+    font-size: 20px;
+
+    + p {
+      margin-top: 30px;
+    }
+  }
+}
+
+.contact-form {
+
+  input[type="text"], textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px;
+    border: 1px solid $light-grey;
+  }
+
+  input[type="text"] {
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: none;
+    height: 120px;
+  }
+
+  span {
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  fieldset {
+    margin-bottom: 40px;
+  }
+
+  .btn-green {
+    padding: 8px 30px;
+  }
+}

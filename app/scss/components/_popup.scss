@@ -1,0 +1,51 @@
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 920px;
+  height: 725px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  -webkit-box-shadow:  0 0 0 9999px rgba(0, 0, 0, 0.5);
+  box-shadow:  0 0 0 9999px rgba(0, 0, 0, 0.5);
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 500ms;
+
+  @-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .close-popup {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background: url("../images/icons/close.svg") center no-repeat;
+    cursor: pointer;
+  }
+
+  &.popup-trial {
+    background: url("../images/dashboard.png") 0 bottom no-repeat $white;
+
+    .popup-text {
+      max-width: 440px;
+      margin: 0 auto;
+      text-align: center;
+
+      .link-arrow {
+        display: inline-block;
+        margin-top: 25px;
+      }
+    }
+  }
+}

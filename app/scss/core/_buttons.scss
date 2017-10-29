@@ -1,0 +1,23 @@
+button {
+  @include transition (all, 0.5s, ease);
+  text-align: center;
+  font-weight: 600;
+  padding: 8px 11px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: $box-shadow;
+
+  &.btn-white {
+    @include button-bg($white);
+    color: $green;
+  }
+
+  &.btn-green {
+    @include button-bg($green);
+    color: $white;
+  }
+
+  + button {
+    margin-left: 10px;
+  }
+}

@@ -1,3 +1,46 @@
 @import "core/core";
 @import "layout/header";
+@import "layout/intro";
+@import "layout/features";
+@import "layout/contact-us";
+@import "layout/footer";
+@import "components/popup";
 
+.wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper-color {
+  background: $light-blue;
+  position: relative;
+
+  &:after {
+    @include skew(0, -9);
+    @include pseudo;
+    background: inherit;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    right: 0;
+    transform-origin: 100%;
+    z-index: -1;
+  }
+}
+
+.link-arrow {
+  position: relative;
+  color: $blue;
+  padding-right: 13px;
+
+  &:after {
+    @include pseudo;
+    background: url("../images/icons/arrow-right.svg") 0 0 no-repeat;
+    background-size: contain;
+    width: 6px;
+    height: 6px;
+    right: 0;
+    top: 6px;
+  }
+}

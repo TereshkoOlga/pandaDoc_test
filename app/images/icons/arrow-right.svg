@@ -1,0 +1,12 @@
+<svg width="13" height="13" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>&#226;&#134;&#146; copy</title>
+    <desc>Created using Figma</desc>
+    <g id="Canvas" transform="translate(-1514 -966)">
+        <g id="&#226;&#134;&#146; copy">
+            <use xlink:href="#path0_fill" transform="translate(1512 959)" fill="#3B7ADB"/>
+        </g>
+    </g>
+    <defs>
+        <path id="path0_fill" d="M 10.65 7.75L 14.73 13.75L 10.65 19.81L 8.07 19.81L 11.25 14.83L 2.34 14.83L 2.34 12.7L 11.25 12.7L 8.07 7.75L 10.65 7.75Z"/>
+    </defs>
+</svg>

@@ -1,0 +1,59 @@
+.footer-content {
+  @include wrapper;
+  padding: 70px 15px 40px;
+}
+
+footer {
+  background: $bg-grey;
+}
+
+.list-wrap {
+  display: flex;
+}
+
+.footer-list {
+  flex-grow: 2;
+
+  li {
+
+    a {
+      @include transition (all, 0.5s, ease);
+      color: $grey;
+      line-height: 1.5;
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    &:first-child {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 120px;
+
+  p {
+    font-size: 12px;
+    flex-grow: 2;
+    padding-left: 38px;
+
+    span {
+      display: block;
+    }
+  }
+
+  .app {
+    flex-grow: 3;
+
+    a {
+      line-height: 1;
+      display: inline-block;
+    }
+  }
+}
