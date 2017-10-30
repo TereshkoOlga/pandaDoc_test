@@ -20,6 +20,8 @@ header {
 
 .nav-items {
   flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav {
@@ -53,7 +55,7 @@ header {
   .nav-items {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     right: 0;
     bottom: 0;
@@ -81,6 +83,8 @@ header {
     }
 
     &.open {
+      position: fixed;
+      z-index: 11;
 
       + .nav-items {
         display: block;
@@ -103,7 +107,7 @@ header {
       }
 
       + li {
-        border-top: 1px solid $light-grey;
+        @include border('top', 1px, solid, $light-grey);
       }
     }
   }

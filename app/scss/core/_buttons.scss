@@ -21,3 +21,9 @@ button {
     margin-left: 10px;
   }
 }
+
+@media screen and (max-width: $break-medium){
+  button + button {
+    margin-left: 4px;
+  }
+}

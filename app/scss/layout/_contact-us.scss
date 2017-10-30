@@ -1,15 +1,15 @@
 .contact-us {
+  @include center-block;
   max-width: 1440px;
-  margin: 158px  auto 0 auto;
-  background: url("../images/footer.png") 0 bottom no-repeat;
-  background-size: 100%;
-  min-height: 300px;
+  margin-top: 158px;
+  background: url("../images/footer.png") -70px bottom no-repeat;
+  background-size: 125%;
 }
 
 .contact-info {
   @include wrapper;
   display: flex;
-  padding-bottom: 20%;
+  padding-bottom: 26%;
 
   > div {
     width: 50%;
@@ -39,7 +39,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 7px;
-    border: 1px solid $light-grey;
+    @include border(1px, solid, $light-grey);
   }
 
   input[type="text"] {
@@ -63,5 +63,37 @@
 
   .btn-green {
     padding: 8px 30px;
+  }
+}
+
+
+@media screen and (max-width: $break-medium) {
+
+  .contact-us {
+    margin-top: 90px;
+    background-size: 180%;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    padding-bottom: 48%;
+
+    > div:nth-child(n) {
+      padding: 0;
+      width: 100%;
+    }
+
+    .contact-form {
+      margin-top: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: $break-small){
+
+  .contact-us {
+    margin-top: 90px;
+    background-size: 230%;
+    background-position-x: 14%;
   }
 }

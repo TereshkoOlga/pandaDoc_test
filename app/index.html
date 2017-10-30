@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/helper.css">
-    <script src="scripts/common.js"></script>
 </head>
 <body>
+<main>
     <div class="inner-wrap">
         <div class="wrapper-color">
             <div class="wrapper">
@@ -83,6 +82,7 @@
                     <li class="active item" data-tab="analytics">Proposals & Quotes</li>
                     <li class="item"data-tab="team">Team Management</li>
                     <li class="item" data-tab="content">Content Management</li>
+                    <span class="js-open-tab-mobile mobile-version"></span>
                 </ul>
             </div>
             <div class="features-blocks js-features-blocks">
@@ -286,15 +286,19 @@
 
         </div>
     </footer>
-
+</main>
 <div class="popup popup-trial js-popup-trial">
-    <span class="close-popup js-close-popup"></span>
-    <div class="popup-text">
-        <h3>Automate the signing process</h3>
-        <p>Enable this add-on to automatically calculate Profit Margin on every item in your pricing table and each proposal before you send it out. And don’t worry, you’re the only one who will see profit margin, your recipient’s won’t!</p>
-        <a href="#" class="link-arrow">Next feature</a>
+    <div class="popup-content">
+        <span class="close-popup js-close-popup"></span>
+        <div class="popup-text">
+            <h3>Automate the signing process</h3>
+            <p>Enable this add-on to automatically calculate Profit Margin on every item in your pricing table and each proposal before you send it out. And don’t worry, you’re the only one who will see profit margin, your recipient’s won’t!</p>
+            <a href="#" class="link-arrow">Next feature</a>
+        </div>
     </div>
+    <img src="images/dashboard.png" />
 </div>
+    <script src="scripts/common.js"></script>
 </body>
 </html>
 

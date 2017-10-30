@@ -13,10 +13,14 @@
             document.querySelector('.js-hamburger').addEventListener("click", function(){
                 switchMobileMenu(this);
             });
+
+            document.querySelector('.js-open-tab-mobile').addEventListener("click", function() {
+                openMobileTabs();
+            });
         }
 
         function  showPopup(){
-            document.querySelector('.js-popup-trial').style.display="block"
+            document.querySelector('.js-popup-trial').style.display="flex"
         }
 
         function  hidePopup(){
@@ -46,6 +50,10 @@
 
         function switchMobileMenu(self) {
             self.classList.toggle('open');
+        }
+
+        function openMobileTabs() {
+            document.querySelector('.js-features-list').classList.toggle('open');
         }
 
         eventBinder();

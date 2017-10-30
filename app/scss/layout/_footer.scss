@@ -57,3 +57,30 @@ footer {
     }
   }
 }
+
+@media screen and (max-width: $break-medium) {
+
+  .list-wrap {
+    display: none;
+  }
+
+  .footer-info {
+    margin-top: 0;
+
+    p {
+      padding-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $break-small) {
+
+  .footer-info {
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      padding-top: 28px;
+    }
+  }
+}
