@@ -2,8 +2,9 @@ button {
   @include transition (all, 0.5s, ease);
   text-align: center;
   font-weight: 600;
-  padding: 8px 11px;
-  border-radius: 5px;
+  word-spacing: 2px;
+  padding: 12px 20px;
+  border-radius: 3px;
   border: none;
   box-shadow: $box-shadow;
 
@@ -22,7 +23,7 @@ button {
   }
 }
 
-@media screen and (max-width: $break-medium){
+@media screen and (max-width: $break-small){
   button + button {
     margin-left: 4px;
   }

@@ -15,11 +15,11 @@ footer {
   flex-grow: 2;
 
   li {
+    margin: 3px 0;
 
     a {
       @include transition (all, 0.5s, ease);
       color: $grey;
-      line-height: 1.5;
 
       &:hover {
         color: $black;
@@ -27,7 +27,8 @@ footer {
     }
 
     &:first-child {
-      margin-bottom: 60px;
+      margin-bottom: 51px;
+      letter-spacing: 1px;
     }
   }
 }
@@ -39,8 +40,8 @@ footer {
   margin-top: 120px;
 
   p {
-    font-size: 12px;
     flex-grow: 2;
+    font-size: 12px;
     padding-left: 38px;
 
     span {
@@ -54,6 +55,10 @@ footer {
     a {
       line-height: 1;
       display: inline-block;
+
+      + a {
+        margin-left: 6px;
+      }
     }
   }
 }

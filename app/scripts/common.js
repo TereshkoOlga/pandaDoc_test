@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    window.onload = function() {
+    function ready() {
 
         function eventBinder() {
             document.querySelector('.js-show-popup').addEventListener("click", function(){
@@ -20,11 +20,11 @@
         }
 
         function  showPopup(){
-            document.querySelector('.js-popup-trial').style.display="flex"
+            document.querySelector('.js-popup-trial').style.display="flex";
         }
 
         function  hidePopup(){
-            document.querySelector('.js-popup-trial').style.display="none"
+            document.querySelector('.js-popup-trial').style.display="none";
         }
 
         function clickTabs() {
@@ -59,5 +59,7 @@
         eventBinder();
         clickTabs();
     }
+
+    document.addEventListener("DOMContentLoaded", ready);
 
 })();

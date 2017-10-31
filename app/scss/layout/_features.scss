@@ -11,10 +11,12 @@
   display: flex;
   justify-content: center;
   margin-bottom: 58px;
+  padding-top: 9px;
 
   li {
     @include transition (all, 0.5s, ease);
     color: $blue;
+    letter-spacing: 1px;
     padding: 6px 19px;
     background: transparent;
     border-radius: 15px;
@@ -46,7 +48,6 @@
   display: none;
   max-width: 1440px;
   flex-wrap: wrap;
-  -webkit-animation: fadeEffect 1s;
   animation: fadeEffect 1s;
 
   &.active-content {
@@ -60,14 +61,14 @@
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  padding: 60px 10% 40px 60px;
+  padding: 60px 7% 40px 60px;
 
   &:nth-child(2n+1) {
     justify-content: flex-end;
   }
 
   &:nth-child(2n) {
-    @include border('top', 2px, solid, $light-grey);
+    @include border('left', 2px, solid, $light-grey);
     justify-content: flex-start;
   }
 }
@@ -85,7 +86,6 @@
     left: 0;
   }
 }
-
 
 @media screen and (max-width: $break-medium){
 
@@ -126,7 +126,7 @@
       background: $white;
 
       > span.mobile-version {
-        transform: rotate(-180deg);
+        @include rotate(-180);
       }
 
       li {

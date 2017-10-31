@@ -1,10 +1,5 @@
-
 @mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
-  -webkit-transition: $what $time $how;
-  -moz-transition:    $what $time $how;
-  -ms-transition:     $what $time $how;
-  -o-transition:      $what $time $how;
-  transition:         $what $time $how;
+  transition: $what $time $how;
 }
 
 @mixin button-bg($bg) {
@@ -28,6 +23,7 @@
 @mixin title-2 {
   @include title;
   font-size: 2.667em;
+  letter-spacing: 3px;
 
   @media screen and (max-width: $break-medium) {
     font-size: 1.77em;
@@ -41,6 +37,7 @@
 @mixin title-3 {
   @include title;
   font-size: 2em;
+  letter-spacing: 1px;
 
   @media screen and (max-width: $break-medium) {
     font-size: 1.47em;
@@ -54,7 +51,6 @@
 }
 
 @mixin center-block {
-  display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -75,18 +71,19 @@
   position: $pos;
 }
 
-@mixin transform($transforms) {
-  -moz-transform: $transforms;
-  -o-transform: $transforms;
-  -ms-transform: $transforms;
-  -webkit-transform: $transforms;
-  transform: $transforms;
-}
-
 @mixin translate ($x, $y) {
-  @include transform(translate($x, $y));
+  transform: translate($x, $y);
 }
 
 @mixin skew ($x, $y) {
-  @include transform(skew(#{$x}deg, #{$y}deg));
+  transform: skew(#{$x}deg, #{$y}deg);
+}
+
+@mixin rotate ($deg) {
+  transform: rotate(#{$deg}deg);
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

@@ -1,8 +1,8 @@
 header {
+  @include border('bottom', 2px, solid, $white);
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  border-bottom: 1px solid $white;
   padding: 20px 0;
 }
 
@@ -18,20 +18,25 @@ header {
   }
 }
 
-.nav-items {
-  flex-grow: 1;
+.nav, .nav-items {
   display: flex;
   justify-content: flex-end;
 }
+.nav-items {
+  flex-grow: 1;
+
+  button {
+    padding: 8px 11px;
+  }
+}
 
 .nav {
-  display: flex;
-  justify-content: flex-end;
   margin: 9px 0 0 9px;
 
   a {
     @include transition (all, 0.5s, ease);
     color: $black;
+    letter-spacing: 1px;
 
     &:hover {
       color: green;
@@ -39,7 +44,7 @@ header {
   }
 
   li {
-    margin-right: 21px;
+    margin-right: 18px;
   }
 }
 
