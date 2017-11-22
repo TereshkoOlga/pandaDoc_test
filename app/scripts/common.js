@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    window.onload = function() {
+    function ready() {
 
         function eventBinder() {
             document.querySelector('.js-show-popup').addEventListener("click", function(){
@@ -13,14 +13,18 @@
             document.querySelector('.js-hamburger').addEventListener("click", function(){
                 switchMobileMenu(this);
             });
+
+            document.querySelector('.js-open-tab-mobile').addEventListener("click", function() {
+                openMobileTabs();
+            });
         }
 
         function  showPopup(){
-            document.querySelector('.js-popup-trial').style.display="block"
+            document.querySelector('.js-popup-trial').style.display="flex";
         }
 
         function  hidePopup(){
-            document.querySelector('.js-popup-trial').style.display="none"
+            document.querySelector('.js-popup-trial').style.display="none";
         }
 
         function clickTabs() {
@@ -48,8 +52,14 @@
             self.classList.toggle('open');
         }
 
+        function openMobileTabs() {
+            document.querySelector('.js-features-list').classList.toggle('open');
+        }
+
         eventBinder();
         clickTabs();
     }
+
+    document.addEventListener("DOMContentLoaded", ready);
 
 })();

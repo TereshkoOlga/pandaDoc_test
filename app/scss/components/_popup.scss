@@ -1,27 +1,24 @@
 .popup {
+  @include translate(-50%, -50%);
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   z-index: 20;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 920px;
-  height: 725px;
-  padding: 30px 20px;
-  box-sizing: border-box;
-  -webkit-box-shadow:  0 0 0 9999px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  height: 70%;
+  max-height: 725px;
+  max-width: 920px;
+  background: $white;
+  overflow: hidden;
   box-shadow:  0 0 0 9999px rgba(0, 0, 0, 0.5);
-  -webkit-animation: fadeEffect 1s;
   animation: fadeEffect 500ms;
 
-  @-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
+  .popup-content {
+    padding: 30px 20px;
 
-  @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
   }
 
   .close-popup {
@@ -35,17 +32,20 @@
   }
 
   &.popup-trial {
-    background: url("../images/dashboard.png") 0 bottom no-repeat $white;
 
     .popup-text {
+      @include center-block;
       max-width: 440px;
-      margin: 0 auto;
       text-align: center;
 
       .link-arrow {
         display: inline-block;
         margin-top: 25px;
       }
+    }
+
+    img {
+      max-width: 100%;
     }
   }
 }

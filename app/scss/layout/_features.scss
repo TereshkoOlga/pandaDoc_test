@@ -11,10 +11,12 @@
   display: flex;
   justify-content: center;
   margin-bottom: 58px;
+  padding-top: 9px;
 
   li {
     @include transition (all, 0.5s, ease);
     color: $blue;
+    letter-spacing: 1px;
     padding: 6px 19px;
     background: transparent;
     border-radius: 15px;
@@ -26,19 +28,26 @@
       color: $white;
     }
 
+    &.active {
+      cursor: default;
+    }
+
     + li {
       margin-left: 3px;
     }
   }
+
+  > span.mobile-version {
+    display: none;
+  }
 }
 
 .features-content {
+  @include center-block;
+  @include border('top', 2px, solid, $light-grey);
   display: none;
   max-width: 1440px;
-  margin: 0 auto;
   flex-wrap: wrap;
-  border-top: 2px solid $light-grey;
-  -webkit-animation: fadeEffect 1s;
   animation: fadeEffect 1s;
 
   &.active-content {
@@ -46,31 +55,21 @@
   }
 }
 
-@-webkit-keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
 .features-item {
+  @include border('bottom', 2px, solid, $light-grey);
   width: 50%;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  border-bottom: 2px solid $light-grey;
-  padding: 60px 10% 40px 60px;
+  padding: 60px 7% 40px 60px;
 
   &:nth-child(2n+1) {
     justify-content: flex-end;
   }
 
   &:nth-child(2n) {
+    @include border('left', 2px, solid, $light-grey);
     justify-content: flex-start;
-    border-left: 2px solid $light-grey;
   }
 }
 
@@ -88,11 +87,11 @@
   }
 }
 
-
 @media screen and (max-width: $break-medium){
 
   .features {
     margin-top: 85px;
+    position: relative;
   }
 
   .features-item {
@@ -105,8 +104,90 @@
   }
 
   .features-inner {
+    @include center-block;
     min-height: 280px;
-    margin: 0 auto;
+  }
+
+  .features-list {
+    @include center-block;
+    position: absolute;
+    top: 37px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    max-width: 48%;
+    min-width: 222px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    &.open {
+      box-shadow: $box-shadow;
+      background: $white;
+
+      > span.mobile-version {
+        @include rotate(-180);
+      }
+
+      li {
+        display: block;
+
+        &.active {
+          color: $black;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+
+    > span.mobile-version {
+      display: block;
+      cursor: pointer;
+      background: url("../images/icons/arrow-down.svg") 0 0 no-repeat;
+      width: 9px;
+      height: 6px;
+      position: absolute;
+      right: 25px;
+      top: 32px;
+
+
+      &:before {
+        @include pseudo;
+        width: 30px;
+        height: 30px;
+        top: -12px;
+        left: -10px;
+        }
+    }
+
+    li {
+      display: none;
+
+      &.active {
+        display: block;
+        background: none;
+        color: $blue;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      &:hover {
+        background: none;
+        color: $black;
+      }
+
+      + li {
+        margin: 0;
+      }
+    }
+  }
+
+  .features-blocks {
+    margin-top: 100px;
   }
 }
 

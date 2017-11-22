@@ -1,27 +1,31 @@
 .contact-us {
+  @include center-block;
   max-width: 1440px;
-  margin: 158px  auto 0 auto;
-  background: url("../images/footer.png") 0 bottom no-repeat;
-  background-size: 100%;
-  min-height: 300px;
+  margin-top: 152px;
+  background: url("../images/footer.png") -70px bottom no-repeat;
+  background-size: 125%;
+
+  h2 {
+    font-size: 3.34em;
+  }
 }
 
 .contact-info {
   @include wrapper;
   display: flex;
-  padding-bottom: 20%;
-
-  > div {
-    width: 50%;
-    box-sizing: border-box;
-  }
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 26%;
 
   .contact-content {
-    padding-right: 60px;
+    max-width: 365px;
   }
 
   .contact-form {
-    padding-left: 60px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    max-width: 460px;
+    flex-grow: 2;
   }
 
   p {
@@ -39,7 +43,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 7px;
-    border: 1px solid $light-grey;
+    border: 1px  solid  $light-grey;
   }
 
   input[type="text"] {
@@ -60,8 +64,42 @@
   fieldset {
     margin-bottom: 40px;
   }
+}
 
-  .btn-green {
-    padding: 8px 30px;
+
+@media screen and (max-width: $break-medium) {
+
+  .contact-us {
+    margin-top: 90px;
+    background-size: 180%;
+
+    h2 {
+      font-size: 2.3em;
+    }
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 48%;
+
+    > div:nth-child(n) {
+      padding: 0;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .contact-form {
+      margin-top: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: $break-small){
+
+  .contact-us {
+    margin-top: 90px;
+    background-size: 230%;
+    background-position-x: 14%;
   }
 }

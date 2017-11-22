@@ -1,8 +1,8 @@
 header {
+  @include border('bottom', 2px, solid, $white);
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  border-bottom: 1px solid $white;
   padding: 20px 0;
 }
 
@@ -18,20 +18,27 @@ header {
   }
 }
 
+.nav, .nav-items {
+  display: flex;
+  justify-content: flex-end;
+}
 .nav-items {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
+
+  button {
+    padding: 8px 11px;
+  }
 }
 
 .nav {
-  display: flex;
-  justify-content: flex-end;
   margin: 9px 0 0 9px;
 
   a {
     @include transition (all, 0.5s, ease);
     color: $black;
+    letter-spacing: 1px;
 
     &:hover {
       color: green;
@@ -39,7 +46,7 @@ header {
   }
 
   li {
-    margin-right: 21px;
+    margin-right: 18px;
   }
 }
 
@@ -55,7 +62,7 @@ header {
   .nav-items {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     right: 0;
     bottom: 0;
@@ -83,6 +90,8 @@ header {
     }
 
     &.open {
+      position: fixed;
+      z-index: 11;
 
       + .nav-items {
         display: block;
@@ -105,7 +114,7 @@ header {
       }
 
       + li {
-        border-top: 1px solid $light-grey;
+        @include border('top', 1px, solid, $light-grey);
       }
     }
   }

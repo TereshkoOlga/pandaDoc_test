@@ -1,30 +1,31 @@
 .intro {
+  @include center-block;
   max-width: 1233px;
-  margin: 118px auto 0 auto;
-  background: url("../images/hero.png") 0 0 no-repeat;
+  margin-top: 116px;
+  background: url("../images/hero.png") 27px 3px no-repeat;
   min-height: 490px;
   background-size: 100%;
 }
 
 .try-it {
-  max-width: 460px;
+  max-width: 50%;
 
   h2 {
-    padding: 15px 60px 40px 0;
+    padding: 15px 60px 28px 0;
   }
 }
 
 .line {
+  @include border('bottom', 2px, solid, $light-grey);
   color: $grey;
-  padding-bottom: 8px;
-  border-bottom: 2px solid $light-grey;
+  padding-bottom: 6px;
 }
 
 .about {
   @include wrapper;
   display: flex;
   justify-content: space-between;
-  margin-top: -20px;
+  margin-top: -27px;
 }
 
 .about-item {
@@ -35,6 +36,7 @@
   background: $white;
   display: flex;
   cursor: pointer;
+  color: $black;
 
   .follow {
     position: relative;
@@ -42,7 +44,6 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 18px;
-    border-left: 1px solid $light-grey;
 
     &:before {
       @include transition(all, 0.5s, ease);
@@ -56,10 +57,11 @@
   }
 
   .info {
-    padding: 18px 25% 18px 40px;
+    @include border('right', 1px, solid, $light-grey);
+    padding: 18px 25% 43px 40px;
 
     h4 {
-      margin-top: 25px;
+      margin-top: 19px;
     }
   }
 
@@ -92,17 +94,28 @@
     max-width: 300px;
 
     h2 {
-      padding-right: 10px;
+      padding-right: 30px;
     }
   }
 
   .about {
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 5px;
   }
 
   .about-item {
-    flex-basis: 320px;
+    flex-basis: 355px;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .follow {
+      border-left: none;
+    }
+
+    .info {
+      @include border('bottom', 1px, solid, $light-grey);
+    }
   }
 
   .about-item + .about-item {
@@ -112,12 +125,36 @@
 
   .partners {
     flex-flow: wrap;
-    justify-content: center;
-    max-width: 214px;
+    max-width: 215px;
 
     img {
-      width: 50%;
-      margin: 7px 7px;
+      max-width: 37%;
     }
+  }
+
+  .intro {
+    margin-top: 60px;
+    min-height: 300px;
+    background-size: 123%;
+    background-position: 68% 16%;
+  }
+
+  .line {
+    border: none;
+  }
+}
+
+
+@media screen and (max-width: $break-small){
+
+  .line {
+    @include border('top', 1px, solid, $light-grey);
+  }
+
+  .intro {
+    background-size: 164%;
+    background-position: 100% bottom;
+    padding-bottom: 47%;
+
   }
 }
